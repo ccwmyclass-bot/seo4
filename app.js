@@ -71,10 +71,20 @@ function renderProductDetail() {
                     <p>${product.description}</p>
                 </div>
                 <br>
-                <button class="btn">Add to Cart</button>
+                <button class="btn">加入購物車</button>
                 <br><br>
-                <p><strong>Category:</strong> ${product.category}</p>
+                <p><strong>分類:</strong> ${translateCategory(product.category)}</p>
             </div>
         </div>
     `;
+}
+
+function translateCategory(cat) {
+    const mapping = {
+        'casual': '休閒服飾',
+        'formal': '正式服飾',
+        'jewelry': '飾品',
+        'accessories': '配件'
+    };
+    return mapping[cat] || cat;
 }
